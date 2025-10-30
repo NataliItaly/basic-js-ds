@@ -35,12 +35,10 @@ function removeNode(node, data) {
     node.right = removeNode(node.right, data);
     return node;
   } else {
-    // найден узел для удаления
     if (!node.left && !node.right) return null;
     if (!node.left) return node.right;
     if (!node.right) return node.left;
 
-    // оба поддерева есть → найти минимум в правом поддереве
     let minRight = node.right;
     while (minRight.left) {
       minRight = minRight.left;
